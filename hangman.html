@@ -1,0 +1,28 @@
+<!DOCTYPE html> 
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width-device-width, initial-scale=1.0">
+        <title>Hangman</title>
+        <link rel="stylesheet" href="hangman.css">
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&display=swap');
+        </style>
+        <script src="hangman.js"></script>
+    </head>
+
+    <body>
+        <div id="game-board">
+            <div id="ded-man">
+                <img id="man" src = "hmBegin.png">
+            </div>
+            <div id="hangman">
+                <label>hangman</label>
+                <div id="word"></div>
+                <div id="incorrect-guesses">
+                    <h1>guesses that confirm you're a loser</h1>
+                    <div id="incorrect-guesses-list"></div>
+                </div>
+            </div>
+        </div>
+    </body>

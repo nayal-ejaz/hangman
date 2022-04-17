@@ -1,0 +1,68 @@
+body {
+    /* background-color: #1b8b00;
+    background-image: linear-gradient(314deg, #1b8b00 0%, #a2d240 74%); */
+
+    background: rgb(20,158,17);
+    background: linear-gradient(90deg, rgba(20,158,17,1) 0%, rgba(137,200,49,1) 80%);
+
+    color:white;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: bolder;
+    justify-content: center;
+    display: flex;
+}
+
+label {
+    font-size: 150px;
+}
+
+#game-board {
+    margin-top: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#word {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.blankSpace {
+    border-bottom: 10px solid white;
+    height: 60px;
+    width: 60px;
+    margin: auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: white;
+    font-size: 36px;
+    font-weight: bold;
+}
+
+#incorrect-guesses {
+    margin-top: 100px;
+}
+
+#incorrect-guesses-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.incorrectGuess {
+    border: 5px solid white;
+    height: 60px;
+    width: 60px;
+    margin: auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: white;
+    font-size: 36px;
+    font-weight: bold;
+}
