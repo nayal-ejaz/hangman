@@ -113,9 +113,9 @@ function penalty () {
     }
 }
 
-// function answerReveal () {
-//     you couldnt guess <word>. tch tch.
-// }
+function answerReveal () {
+    //you couldnt guess <word>. tch tch.
+}
 
 
 
