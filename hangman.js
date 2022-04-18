@@ -1,6 +1,9 @@
-var word = "POKEMON";
-var wordArray = word.split("");
-var wordLength = word.length;
+var word;
+var wordArray;
+var wordLength;
+// var word = "POKEMON";    // to set one static word
+// var wordArray = word.split("");
+// var wordLength = word.length;
 var input;
 var position;
 var guess;
@@ -15,6 +18,9 @@ window.onload = function () {
 }
 
 function initialize () {
+
+    setWordFromArray();
+
     // create blank spaces for correct guesses
     for (let x=0; x < wordLength ; x++) {
         blankSpace = document.createElement("span");
@@ -35,6 +41,125 @@ function initialize () {
 
     takeInput();
 }
+
+function setWordFromArray() {
+    var wordListArray = [
+        'TROUBLE',
+        'TROUSERS',
+        'TRUE',
+        'TURN',
+        'TWIST',
+        'UMBRELLA',
+        'UNDER',
+        'UNIT',
+        'UP',
+        'USE',
+        'VALUE',
+        'VERSE',
+        'VERY',
+        'VESSEL',
+        'VIEW',
+        'VIOLENT',
+        'VOICE',
+        'WAITING',
+        'WALK',
+        'WALL',
+        'WAR',
+        'WARM',
+        'WASH',
+        'WASTE',
+        'WATCH',
+        'WATER',
+        'WAVE',
+        'WAX',
+        'WAY',
+        'WEATHER',
+        'WEEK',
+        'WEIGHT',
+        'WELL',
+        'WEST',
+        'WET',
+        'WHEEL',
+        'WHEN',
+        'WHERE',
+        'WHILE',
+        'WHIP',
+        'WHISTLE',
+        'WHITE',
+        'WHO',
+        'WHY',
+        'WIDE',
+        'WILL',
+        'WIND',
+        'WINDOW',
+        'WINE',
+        'WING',
+        'WINTER',
+        'WIRE',
+        'WISE',
+        'WITH',
+        'WOMAN',
+        'WOOD',
+        'WOOL',
+        'WORD',
+        'WORK',
+        'WORM',
+        'WOUND',
+        'WRITING',
+        'WRONG',
+        'YEAR',
+        'YELLOW',
+        'YES',
+        'YESTERDAY',
+        'YOU',
+        'YOUNG',
+        'ANDROID',
+        'REACT',
+        'ADIEU',
+        'LATER',
+        'SIRED',
+        'TEARS',
+        'ALONE',
+        'ARISE',
+        'ABOUT',
+        'ATONE',
+        'SNARE',
+        'CREAM',
+        'PAINT',
+        'WORSE',
+        'SAUCE',
+        'ANIME',
+        'PROWL',
+        'ROAST',
+        'DRAPE',
+        'MEDIA',
+        'ERRAND',
+        'NATURE',
+        'FURNITURE',
+        'BANISH',
+        'CROWDED',
+        'LOCAL',
+        'VOCAL',
+        'MOCK',
+        'TIE',
+        'HOUND',
+        'POUND',
+        'SOUND',
+        'BOUND'
+    ];
+
+    var randomWord =  Math.floor((Math.random() * wordListArray.length));
+    word = wordListArray[randomWord];
+    console.log(word);
+
+    wordArray = word.split("");
+    wordLength = word.length;
+}
+
+
+// function setWordFromFile() {
+    
+// }
 
 
 function takeInput () {
