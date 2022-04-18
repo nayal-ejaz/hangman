@@ -60,11 +60,22 @@ function printCorrectGuess () {
         // position = word.indexOf(input); // gets 1st occurence index of a repetitive character
 
         // for a word containing repetitive characters. eg. "pOkemOn"
-        for (position = 0 ; position < wordLength ; position ++) {  // to do avoid iterating over occupied array places
-            // let blankElementCheck = document.getElementById(position).innerText;
-            if (input == wordArray[position]) {
-                document.getElementById(position).innerText = input;
-                correctGuessCount += 1;
+        for (position = 0 ; position < wordLength ; position ++) {  
+            // avoid iterating over occupied array places
+            // compare with 0 separately without blankCheck to allow correctGuessCount to increment for the first correct guess
+            if (position == 0) {
+                if (input == wordArray[position]) {
+                    document.getElementById(position).innerText = input;
+                    correctGuessCount += 1;
+                }
+            }
+            else if (position > 0) {
+                // avoid iterating over occupied array places
+                let blankElementCheck = document.getElementById(position).innerText;
+                if (blankElementCheck == "" && input == wordArray[position]) {
+                    document.getElementById(position).innerText = input;
+                    correctGuessCount += 1;
+                }
             }
         }
         
@@ -83,10 +94,14 @@ function penalty () {
     var incorrectGuessIsDuplicate = false;
     let newAlphabetToBeChecked = input;
     for (let i = 0 ; i < incorrectGuessCount ; i ++) {
-        // console.log(document.getElementById("incorrect-guess-" + i.toString()).innerText);
         let guessListAlphabetToBeCheckedAgainst = document.getElementById("incorrect-guess-" + i.toString()).innerText;
         if (newAlphabetToBeChecked == guessListAlphabetToBeCheckedAgainst) {
             incorrectGuessIsDuplicate = true;
+            break; 
+            // without break, it goes on to execute for next incremented index and prints the duplicate chr 
+            // eg: Q W Q
+            // checks Q == inputQ at i=0 -> incorrectGuessIsDuplicate returned true. increments i
+            // checks W != inputQ at i=1 -> incorrectGuessIsDuplicate returned false, thus allowing print func to execute. increments i
         }
         else {
             incorrectGuessIsDuplicate = false;
@@ -107,14 +122,18 @@ function penalty () {
                 document.getElementById("incorrect-guess-" + incorrectGuessCount.toString()).innerText = input;
                 manImage = "hmYaDed.png";
                 document.getElementById("man").src = manImage;
+                revealWord();
                 gameOver = true;
             }  
         }
     }
 }
 
-function answerReveal () {
-    //you couldnt guess <word>. tch tch.
+function revealWord () {
+    //document.getElementById("answer").innerHTML = "ya couldn't even guess " + word.toString() + ". TCH. TCH.";
+    for (a = 0 ; a < wordLength ; a ++) {
+        document.getElementById(a).innerText = wordArray[a];
+    }
 }
 
 
