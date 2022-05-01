@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width-device-width, initial-scale=1.0">
-        <title>Hangman</title>
+        <title>hangman</title>
         <link rel="stylesheet" href="hangman.css">
         <style>
             @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&display=swap');
@@ -13,6 +13,9 @@
 
     <body>
         <div id="game-board">
+            <div id="play-again">
+                <button type="button" id="play-again-btn" onclick="playAgain()"> <img id="play-again-icon" src = "playAgain.png"> </button>
+            </div>
             <div id="ded-man">
                 <img id="man" src = "hmBegin.png">
             </div>
@@ -23,7 +26,7 @@
                     <h1>guesses that confirm you're a loser</h1>
                     <div id="incorrect-guesses-list"></div>
                 </div>
-                <!-- <h1 id="answer"></h1> -->
             </div>
         </div>
     </body>
+</html>
